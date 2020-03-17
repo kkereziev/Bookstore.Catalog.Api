@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Bookstore.Catalog.Api.Entities;
+using Bookstore.Catalog.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bookstore.Catalog.Api
