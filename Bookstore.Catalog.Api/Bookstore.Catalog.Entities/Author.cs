@@ -14,6 +14,7 @@ namespace Bookstore.Catalog.Entities
         public string Nationality { get; set; }
         public DateTime AddedOn { get; set; }
         public DateTime ModifiedOn { get; set; }
+
         public ICollection<BookAuthor> BookAuthors { get; set; }
 
     }

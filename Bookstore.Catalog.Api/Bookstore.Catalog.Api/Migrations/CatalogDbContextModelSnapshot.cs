@@ -19,7 +19,7 @@ namespace Bookstore.Catalog.Api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Bookstore.Catalog.Api.Entities.Author", b =>
+            modelBuilder.Entity("Bookstore.Catalog.Entities.Author", b =>
                 {
                     b.Property<int>("AuthorID")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace Bookstore.Catalog.Api.Migrations
                     b.ToTable("Authors");
                 });
 
-            modelBuilder.Entity("Bookstore.Catalog.Api.Entities.Book", b =>
+            modelBuilder.Entity("Bookstore.Catalog.Entities.Book", b =>
                 {
                     b.Property<int>("BookID")
                         .ValueGeneratedOnAdd()
@@ -106,7 +106,7 @@ namespace Bookstore.Catalog.Api.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("Bookstore.Catalog.Api.Entities.BookAuthor", b =>
+            modelBuilder.Entity("Bookstore.Catalog.Entities.BookAuthor", b =>
                 {
                     b.Property<int>("BookID")
                         .HasColumnType("int");
@@ -124,7 +124,7 @@ namespace Bookstore.Catalog.Api.Migrations
                     b.ToTable("BookAuthor");
                 });
 
-            modelBuilder.Entity("Bookstore.Catalog.Api.Entities.BookGenre", b =>
+            modelBuilder.Entity("Bookstore.Catalog.Entities.BookGenre", b =>
                 {
                     b.Property<int>("BookID")
                         .HasColumnType("int");
@@ -139,7 +139,7 @@ namespace Bookstore.Catalog.Api.Migrations
                     b.ToTable("BookGenre");
                 });
 
-            modelBuilder.Entity("Bookstore.Catalog.Api.Entities.Genre", b =>
+            modelBuilder.Entity("Bookstore.Catalog.Entities.Genre", b =>
                 {
                     b.Property<int>("GenreID")
                         .ValueGeneratedOnAdd()
@@ -155,7 +155,7 @@ namespace Bookstore.Catalog.Api.Migrations
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("Bookstore.Catalog.Api.Entities.Language", b =>
+            modelBuilder.Entity("Bookstore.Catalog.Entities.Language", b =>
                 {
                     b.Property<int>("LanguageID")
                         .ValueGeneratedOnAdd()
@@ -170,7 +170,7 @@ namespace Bookstore.Catalog.Api.Migrations
                     b.ToTable("Languages");
                 });
 
-            modelBuilder.Entity("Bookstore.Catalog.Api.Entities.Publisher", b =>
+            modelBuilder.Entity("Bookstore.Catalog.Entities.Publisher", b =>
                 {
                     b.Property<int>("PublisherID")
                         .ValueGeneratedOnAdd()
@@ -195,45 +195,45 @@ namespace Bookstore.Catalog.Api.Migrations
                     b.ToTable("Publishers");
                 });
 
-            modelBuilder.Entity("Bookstore.Catalog.Api.Entities.Book", b =>
+            modelBuilder.Entity("Bookstore.Catalog.Entities.Book", b =>
                 {
-                    b.HasOne("Bookstore.Catalog.Api.Entities.Language", "Language")
+                    b.HasOne("Bookstore.Catalog.Entities.Language", "Language")
                         .WithMany("Books")
                         .HasForeignKey("LanguageID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Bookstore.Catalog.Api.Entities.Publisher", "Publisher")
+                    b.HasOne("Bookstore.Catalog.Entities.Publisher", "Publisher")
                         .WithMany("Books")
                         .HasForeignKey("PublisherID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Bookstore.Catalog.Api.Entities.BookAuthor", b =>
+            modelBuilder.Entity("Bookstore.Catalog.Entities.BookAuthor", b =>
                 {
-                    b.HasOne("Bookstore.Catalog.Api.Entities.Author", "Author")
+                    b.HasOne("Bookstore.Catalog.Entities.Author", "Author")
                         .WithMany("BookAuthors")
                         .HasForeignKey("AuthorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Bookstore.Catalog.Api.Entities.Book", "Book")
+                    b.HasOne("Bookstore.Catalog.Entities.Book", "Book")
                         .WithMany("BookAuthors")
                         .HasForeignKey("BookID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Bookstore.Catalog.Api.Entities.BookGenre", b =>
+            modelBuilder.Entity("Bookstore.Catalog.Entities.BookGenre", b =>
                 {
-                    b.HasOne("Bookstore.Catalog.Api.Entities.Book", "Book")
+                    b.HasOne("Bookstore.Catalog.Entities.Book", "Book")
                         .WithMany("Genres")
                         .HasForeignKey("BookID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Bookstore.Catalog.Api.Entities.Genre", "Ganre")
+                    b.HasOne("Bookstore.Catalog.Entities.Genre", "Ganre")
                         .WithMany("BookGenres")
                         .HasForeignKey("GenreID")
                         .OnDelete(DeleteBehavior.Cascade)
