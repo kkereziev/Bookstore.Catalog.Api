@@ -146,3 +146,5 @@ C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Cat
 C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.Api\obj\Debug\netcoreapp3.1\Bookstore.Catalog.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.Api\bin\Debug\netcoreapp3.1\Bookstore.Catalog.Entities.dll
 C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.Api\bin\Debug\netcoreapp3.1\Bookstore.Catalog.Entities.pdb
+C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.Api\bin\Debug\netcoreapp3.1\Bookstore.Catalog.DTO.dll
+C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.Api\bin\Debug\netcoreapp3.1\Bookstore.Catalog.DTO.pdb

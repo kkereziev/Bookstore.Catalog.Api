@@ -1,0 +1,8 @@
+C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.DTO\bin\Debug\netstandard2.0\Bookstore.Catalog.DTO.deps.json
+C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.DTO\bin\Debug\netstandard2.0\Bookstore.Catalog.DTO.dll
+C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.DTO\bin\Debug\netstandard2.0\Bookstore.Catalog.DTO.pdb
+C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.DTO\obj\Debug\netstandard2.0\Bookstore.Catalog.DTO.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.DTO\obj\Debug\netstandard2.0\Bookstore.Catalog.DTO.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.DTO\obj\Debug\netstandard2.0\Bookstore.Catalog.DTO.AssemblyInfo.cs
+C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.DTO\obj\Debug\netstandard2.0\Bookstore.Catalog.DTO.dll
+C:\Users\admin\Desktop\Bookstore.Catalog.Api\Bookstore.Catalog.Api\Bookstore.Catalog.DTO\obj\Debug\netstandard2.0\Bookstore.Catalog.DTO.pdb

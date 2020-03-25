@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Bookstore.Catalog.Api;
 using Bookstore.Catalog.Entities;
+using Bookstore.Catalog.DTO;
 
 namespace Bookstore.Catalog.Api.Controllers
 {
@@ -25,21 +26,66 @@ namespace Bookstore.Catalog.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {
-            return await _context.Books.ToListAsync();
+            return await _context.Books
+                .Include(x=>x.BookAuthors)
+                .Include(x=>x.Genres)
+                .Include(x=>x.Publisher)
+                .Include(x=>x.Language)
+                .ToListAsync();
         }
 
         // GET: api/Books/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Book>> GetBook(int id)
+        public async Task<ActionResult<BookDto>> GetBook(int id)
         {
-            var book = await _context.Books.FindAsync(id);
+            var book = await _context.Books
+                .Include(x => x.BookAuthors)
+                .Include(x => x.Genres)
+                .Include(x => x.Publisher)
+                .Include(x => x.Language)
+                .SingleOrDefaultAsync(x => x.BookID == id);
+            
 
             if (book == null)
             {
                 return NotFound();
             }
+            var bookDto = new BookDto()
+            {
+                BookID=book.BookID,
+                Title=book.Title,
+                Description=book.Description,
+                Cover=book.Cover,
+                ISBN=book.ISBN,
+                Year=book.Year,
+                Price=book.Price,
+                Language=new LanguageDto() { LanguageID=book.LanguageID, Name=book.Language.Name},
+                Publisher = new PublisherDto()
+                {
+                    PublisherID=book.PublisherID,
+                    CompanyName=book.Publisher.CompanyName,
+                    Country=book.Publisher.Country
+                },
+                ModifiedOn=book.ModifiedOn,
+                Authors=book.BookAuthors.Select(x=>new BookAuthorDto()
+                {
+                    Position=x.Position,
+                    Author=new AuthorDto()
+                    {
+                        AuthorID = x.Author.AuthorID,
+                        FirstName=x.Author.FirstName,
+                        LastName=x.Author.LastName,
+                        Nationality=x.Author.Nationality
+                    }
+                }).ToList(),
+                Genres=book.Genres.Select(x=> new GenreDto()
+                {
+                    GenreID=x.Ganre.GenreID,
+                    Name=x.Ganre.Name
+                }).ToList()
+            };
 
-            return book;
+            return bookDto;
         }
 
         // PUT: api/Books/5

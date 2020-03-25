@@ -2,14 +2,47 @@
 @{
     ViewData["Title"] = "Our Books";
 }
-
 <h1>@ViewData["Title"]</h1>
 <table class="table table-bordered table-striped table-hover">
     <thead>
         <tr>
             <th></th>
             <th>ISBN</th>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Language</th>
+            <th>Genres</th>
+            <th>Price</th>
+            <th></th>
         </tr>
     </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td></td>
+                <td>@book.ISBN</td>
+                <td><a asp-action="Get" asp-route-id="@book.BookID">@book.Title</a></td>
+                <td>
+                    @foreach (var g in book.BookAuthors)
+                    {
+                        <a href="#" class="author-name">@g.Author.FirstName @g.Author.LastName</a>
+                    }
+                </td>
+                <td>@book.Language.Name</td>
+                <td>
+                    @foreach (var g in book.Genres)
+                    {
+                        <a href="#" class="badje badge-primary">@g.Ganre.Name</a>
+                    }
+                </td>
+                <td>@book.Price</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@book.BookID" class="btn btn-success">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
-

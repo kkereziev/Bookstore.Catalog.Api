@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Bookstore.Catalog.Api;
 using Bookstore.Catalog.Entities;
 
 namespace Bookstore.Catalog.Api.Controllers
@@ -41,7 +39,7 @@ namespace Bookstore.Catalog.Api.Controllers
 
             return author;
         }
-
+         
         // PUT: api/Authors/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
